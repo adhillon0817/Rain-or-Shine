@@ -7,26 +7,22 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
 
-  <body class="min-100-vh flex-column">
+  <body class="body">
 
     <header>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar">
             <p class="nav-name">Weather Dashboard</p>
         </nav>
     </header>
-    <main class="flex-shrink-0 mb-5">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-2">
-                    <div class="row ml-2 mt-3">
-                        <div class="col-sm-12">
-                            <label>City</label>
+    <main class="main">
+        <label>What city would you like to view?</label>
 
+        <input class ="searchbar" type="text" id="given-input">
 
-                            <input class ="searchbar" type="text" id="given-input">
-                                <button class="btn btn-primary" type="submit" value="Submit"
-                                    id="submitBtn">Get Update!</button> 
-                            <aside class="col-sm-12" id="searched">
+        <button class="btn btn-primary" type="submit" value="Submit"
+        id="submitBtn">Get Update!</button> 
+
+        <aside class="col-sm-12" id="searched">
 
 
 

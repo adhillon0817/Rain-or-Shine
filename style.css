@@ -1,0 +1,22 @@
+.body{
+  background-color: lightblue;
+}
+
+
+.nav-name{
+  font-size: xx-large;
+}
+
+.main{
+  font-size: large;
+}
+
+.searchbar{
+  padding: 6px;
+  border: none;
+}
+
+.btn-primary{
+  font-size: large;
+ 
+}
