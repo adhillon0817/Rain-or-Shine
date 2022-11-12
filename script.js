@@ -1,8 +1,11 @@
 var apiKey = "b6150b7a9c752389e1b9cd938e4b061e";
-var selection = "";
+var cityName = "";
+var search = JSON.parse(localStorage.getItem("city", JSON.stringify(selection)));
 var currentTime = moment().format("MM-DD-YYY");
 
 function renderLastRegistered();
+
+var citySelection = JSON.parse
 
 function fetchGeolocation(cityName) {
     var request = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=b6150b7a9c752389e1b9cd938e4b061e`;
