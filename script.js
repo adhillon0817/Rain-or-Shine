@@ -99,6 +99,18 @@ function getforecast(cityName) {
     .then(function(response) {
         return response.json();
     })
+
+    .then(function(data){
+
+        var dayOne = moment().add(1, "days").format("MM/DD/YYYY");
+        displayOneDate.innerHTML = dayOne;
+        displayOneTemp.innerHTML = "Temperature: " + data.main.temp + "°F";
+        displayOneWind.innerHTML = "Wind: " + data.wind.speed + "mph";
+        displayOneHumidity.innerHTML = "Humidity: " + data.main.humidity + "%";
+        
+    
+    })
+    
 }
 
 
