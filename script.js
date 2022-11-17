@@ -70,6 +70,26 @@ function getApi(cityName) {
 
 }
 
+findEl.addEventListener("click",function(){
+    var cityName = cityfindEl.value;
+    getApi(cityName);
+    getforecast(cityName);
+    var cityInfo = [];
+    cityInfo = cityName.split(" ");
+
+    localStorage.setItem("key",JSON.stringify(cityInfo));
+    var displayName = JSON.parse(localStorage.getItem('key'));
+
+    var li = document.createElement("li");
+    li.textContent = displayName;
+    cityListEl.appendChild(li);
+})
+
+function showCityList(cityName){
+    var displayName = JSON.parse(localStorage.getItem(cityName))
+    console.log(displayName);
+}
+
 function fetchOneCallWeather(lat, lon) {
     
     
