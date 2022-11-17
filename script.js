@@ -1,3 +1,16 @@
+var cityfindEl = document.getElementsById("searchBox");
+var findEl = document.getElementById("find"); 
+
+var cityNameEl = document.getElementById("city-name");
+var currentDateEl = document.getElementById("date");
+var currentTempEl = document.getElementById("temperature");
+var currentWindEl = document.getElementById("wind");
+var currentHumidityEl = document.getElementById("humidity");
+
+var today = moment().format("MM/DD/YYYY");
+
+
+
 var apiKey = "0f003ceaa60fba131d9eb1c9a697784c";
 var cityName = "";
 // var search = JSON.parse(localStorage.getItem("city", JSON.stringify(selection)));
@@ -5,7 +18,7 @@ var cityName = "";
 
 // function renderLastRegistered();
 
-var citySelection = JSON.parse
+\
 
 function fetchGeolocation(cityName) {
     var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c
@@ -28,7 +41,7 @@ function fetchGeolocation(cityName) {
 function fetchOneCallWeather(lat, lon) {
     
     
-    var  longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=b6150b7a9c752389e1b9cd938e4b061e`
+    var  longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
 
 
     fetch(longLat)
