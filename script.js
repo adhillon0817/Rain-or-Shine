@@ -9,10 +9,34 @@ var currentHumidityEl = document.getElementById("humidity");
 
 var today = moment().format("MM/DD/YYYY");
 
-
+var cityListEl = document.getElementById("search-list")
 
 var apiKey = "0f003ceaa60fba131d9eb1c9a697784c";
-var cityName = "";
+
+var dayOneDateEl = document.getElementById("dateone");
+var dayOneTempEl = document.getElementById("tempone");
+var dayOneWindEl = document.getElementById("windone");
+var dayOneHumidityEl = document.getElementById("humidityone");
+
+
+var dayTwoDateEl = document.getElementById("dateTwo");
+var dayTwoTempEl = document.getElementById("tempTwo");
+var dayTwoWindEl = document.getElementById("windTwo");
+var dayTwoHumidityEl = document.getElementById("humidityTwo");
+
+
+var dayThreeDateEl = document.getElementById("datethree");
+var dayThreeTempEl = document.getElementById("tempthree");
+var dayThreeWindEl = document.getElementById("windthree");
+var dayThreeHumidityEl = document.getElementById("humiditythree");
+
+
+var dayFourDateEl = document.getElementById("datefour");
+var dayFourTempEl = document.getElementById("tempfour");
+var dayFourWindEl = document.getElementById("windfour");
+var dayFourHumidityEl = document.getElementById("humidityfour");
+
+
 // var search = JSON.parse(localStorage.getItem("city", JSON.stringify(selection)));
 // var currentTime = moment().format("MM-DD-YYY");
 
