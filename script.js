@@ -37,12 +37,17 @@ var dayFourWindEl = document.getElementById("windfour");
 var dayFourHumidityEl = document.getElementById("humidityfour");
 
 
+var dayFiveDateEl = document.getElementById("datefive");
+var dayFiveTempEl = document.getElementById("tempfive");
+var dayFiveHumidityEl = document.getElementById("humidityfive");
+
+
 // var search = JSON.parse(localStorage.getItem("city", JSON.stringify(selection)));
 // var currentTime = moment().format("MM-DD-YYY");
 
 // function renderLastRegistered();
 
-\
+
 
 function fetchGeolocation(cityName) {
     var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c
