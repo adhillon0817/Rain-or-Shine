@@ -90,21 +90,33 @@ function showCityList(cityName){
     console.log(displayName);
 }
 
-function fetchOneCallWeather(lat, lon) {
-    
-    
-    var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
 
-
-    fetch(longLat)
+function getforecast(cityName) {
+    var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c`;
+    
+     
+    fetch(request)
     .then(function(response) {
         return response.json();
     })
-    .then(function(data) {
-        console.log(data);
-    })
+}
+
+
+// function fetchOneCallWeather(lat, lon) {
+    
+    
+//     var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
+
+
+//     fetch(longLat)
+//     .then(function(response) {
+//         return response.json();
+//     })
+//     .then(function(data) {
+//         console.log(data);
+//     })
 
     
-}
+// }
 
 fetchGeolocation();
