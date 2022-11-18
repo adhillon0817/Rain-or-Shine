@@ -104,9 +104,53 @@ function getforecast(cityName) {
 
         var dayOne = moment().add(1, "days").format("MM/DD/YYYY");
         displayOneDate.innerHTML = dayOne;
-        displayOneTemp.innerHTML = "Temperature: " + data.main.temp + "°F";
-        displayOneWind.innerHTML = "Wind: " + data.wind.speed + "mph";
-        displayOneHumidity.innerHTML = "Humidity: " + data.main.humidity + "%";
+        displayOneTemp.innerHTML = "Temperature: " + data.list[1].main.temp + "°F";
+        displayOneWind.innerHTML = "Wind: " + data.list[1].main.wind.speed + "mph";
+        displayOneHumidity.innerHTML = "Humidity: " + data.list[1].main.humidity + "%";
+        
+    
+    })
+
+    .then(function(data){
+
+        var dayTwo = moment().add(2, "days").format("MM/DD/YYYY");
+        displayTwoDate.innerHTML = dayTwo;
+        displayTwoTemp.innerHTML = "Temperature: " + data.list[8].main.temp + "°F";
+        displayTwoWind.innerHTML = "Wind: " + data.list[8].main.wind.speed + "mph";
+        displayTwoHumidity.innerHTML = "Humidity: " + data.list[8].main.humidity + "%";
+        
+    
+    })
+
+    .then(function(data){
+
+        var dayThree = moment().add(3, "days").format("MM/DD/YYYY");
+        displayThreeDate.innerHTML = dayThree;
+        displayThreetemp.innerHTML = "Temperature: " + data.list[16].main.temp + "°F";
+        displayThreeWind.innerHTML = "Wind: " + data.list[16].main.wind.speed + "mph";
+        displayThreeHumidity.innerHTML = "Humidity: " + data.list[16].main.humidity + "%";
+        
+    
+    })
+
+    .then(function(data){
+
+        var dayFour = moment().add(4, "days").format("MM/DD/YYYY");
+        displayFourDate.innerHTML = dayFour;
+        displayFourTemp.innerHTML = "Temperature: " + data.list[24].main.temp + "°F";
+        displayFourWind.innerHTML = "Wind: " + data.list[24].main.wind.speed + "mph";
+        displayFourHumidity.innerHTML = "Humidity: " + data.list[24].main.humidity + "%";
+        
+    
+    })
+
+    .then(function(data){
+
+        var dayFive = moment().add(5, "days").format("MM/DD/YYYY");
+        displayFiveDate.innerHTML = dayFive;
+        displayFiveTemp.innerHTML = "Temperature: " + data.list[32].main.temp + "°F";
+        displayFiveWind.innerHTML = "Wind: " + data.list[32].main.wind.speed + "mph";
+        displayFiveHumidity.innerHTML = "Humidity: " + data.list[32].main.humidity + "%";
         
     
     })
@@ -131,4 +175,4 @@ function getforecast(cityName) {
     
 // }
 
-fetchGeolocation();
+// fetchGeolocation();
