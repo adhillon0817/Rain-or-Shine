@@ -53,7 +53,7 @@ var dayFiveHumidityEl = document.getElementById("humidityfive");
 
 function fetchGeolocation(cityName) {
     var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c`;
-    
+  
      
     fetch(request)
     .then(function(response) {
@@ -110,7 +110,6 @@ function fetchOneCallWeather(lat, lon) {
     
     var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
 
-
     fetch(longLat)
     .then(function(response) {
         return response.json();
@@ -142,7 +141,7 @@ function fetchOneCallWeather(lat, lon) {
             var singleCard = $("<div>")
             .addClass("singlecard")
             .append(singleDate, singleTemp, singleWind, singleHumid, singleCard);
-
+            
 
 
     //         dayOneDateEl.innerHTML = dayOne;
