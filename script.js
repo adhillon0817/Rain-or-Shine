@@ -92,6 +92,44 @@ function showCityList(cityName){
 }
 
 
+
+
+
+
+
+function fetchOneCallWeather(lat, lon) {
+    
+    
+    var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
+
+
+    fetch(longLat)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        
+        if (!data[0]){
+            alert('Location not found');
+        }
+
+        for (var i = 1; i <6; i++){
+            var dayOne = moment().add(1, "days").format("MM/DD/YYYY");
+            dayOneDateEl.innerHTML = dayOne;
+            dayOneTempEl.innerHTML = "Temperature: " + data.main.temp + "°F";
+            dayOneWindEl.innerHTML = "Wind: " + data.wind.speed + "mph";
+            dayOneHumidityEl.innerHTML = "Humidity: " + data.main.humidity + "%";
+        };
+
+        var 
+       .appendChild()
+
+
+
+    });
+}
+fetchGeolocation();
+
 // function getforecast(cityName) {
 //     var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c`;
     
@@ -159,31 +197,4 @@ function showCityList(cityName){
 // }
 
 
-function fetchOneCallWeather(lat, lon) {
-    
-    
-    var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
 
-
-    fetch(longLat)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        
-        if (!data[0]){
-            alert('Location not found');
-        } else{
-            appendToHistory(search);
-            fetchOneCallWeather(data[0]);
-        }
-
-        for (var i = 1; i <6; i++){
-            
-
-        }
-    })
-
-}
-
-fetchGeolocation();
