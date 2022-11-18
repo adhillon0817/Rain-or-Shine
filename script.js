@@ -61,18 +61,23 @@ function fetchGeolocation(cityName) {
     })  
 
     .then(function(data) {
-        cityNameEl.innerHTML=data.name;
-        currentDateEl.innerHTML=today;
-        currentTempEl.innerHTML= "Temperature: " + data.main.temp + "°F";
-        currentWindEl.innerHTML= "Wind: " + data.wind.speed + "mph";
-        currentHumidityEl.innerHTML= "Humidity: " + data.main.humidity + "%";
-        console.log(data);
+        var lat = data.coord.lat;
+        var lon = data.coord.lon;
+         
+         fetchOneCallWeather(lat, lon);
+          
+      })
+
+
+    // .then(function(data) {
+    //     cityNameEl.innerHTML=data.name;
+    //     currentDateEl.innerHTML=today;
+    //     currentTempEl.innerHTML= "Temperature: " + data.main.temp + "°F";
+    //     currentWindEl.innerHTML= "Wind: " + data.wind.speed + "mph";
+    //     currentHumidityEl.innerHTML= "Humidity: " + data.main.humidity + "%";
+    //     console.log(data);
         
-    })
-
-    
-
-
+    // })
 
 }
 
@@ -94,7 +99,6 @@ function showCityList(cityName){
     var displayName = JSON.parse(localStorage.getItem(cityName))
     console.log(displayName);
 }
-
 
 
 
