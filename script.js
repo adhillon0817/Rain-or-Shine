@@ -170,11 +170,17 @@ function fetchOneCallWeather(lat, lon) {
         return response.json();
     })
     .then(function(data) {
+        
         if (!data[0]){
             alert('Location not found');
         } else{
             appendToHistory(search);
             fetchOneCallWeather(data[0]);
+        }
+
+        for (var i = 1; i <6; i++){
+            
+
         }
     })
 
