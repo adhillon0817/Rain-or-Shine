@@ -100,7 +100,7 @@ function showCityList(cityName){
 function fetchOneCallWeather(lat, lon) {
     
     
-    var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
+    var longLat = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
 
 
     fetch(longLat)
@@ -150,7 +150,7 @@ function fetchOneCallWeather(lat, lon) {
         }
     });
 }
-fetchGeolocation();
+fetchOneCallWeather();
 
 // function getforecast(cityName) {
 //     var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c`;
