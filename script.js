@@ -114,18 +114,40 @@ function fetchOneCallWeather(lat, lon) {
         }
 
         for (var i = 1; i <6; i++){
-            var dayOne = moment().add(1, "days").format("MM/DD/YYYY");
-            dayOneDateEl.innerHTML = dayOne;
-            dayOneTempEl.innerHTML = "Temperature: " + data.main.temp + "°F";
-            dayOneWindEl.innerHTML = "Wind: " + data.wind.speed + "mph";
-            dayOneHumidityEl.innerHTML = "Humidity: " + data.main.humidity + "%";
-        };
-
-        var 
-       .appendChild()
+            var singleDate =$("<h4>")
+            .addClass("singleDate")
+            .text(moment.unix(data.daily[i].dt).format("L"));
 
 
+            var singleTemp = $("<div>")
+            .addClass("temp")
+            .text(`Temp: ` +data.daily[i].temp.max  +  `°F` );
 
+            var singleWind = $("<div>")
+            .addClass("wind")
+            .text(`Wind: ` + data.daily[i].wind.max `mps` );
+
+            var singleHumid = $("<div>")
+            .addClass("humid")
+            .text(`Humidity ` + data.daily[i].humidity + `%`);
+
+            var singleCard = $("<div>")
+            .addClass("singlecard")
+            .append(singleDate, singleTemp, singleWind, singleHumid, singleCard);
+
+
+
+    //         dayOneDateEl.innerHTML = dayOne;
+    //         dayOneTempEl.innerHTML = "Temperature: " + data.main.temp + "°F";
+    //         dayOneWindEl.innerHTML = "Wind: " + data.wind.speed + "mph";
+    //         dayOneHumidityEl.innerHTML = "Humidity: " + data.main.humidity + "%";
+    //     };
+
+    //     var 
+    //    .appendChild()
+
+
+        }
     });
 }
 fetchGeolocation();
