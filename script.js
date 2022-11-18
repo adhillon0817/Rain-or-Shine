@@ -150,7 +150,7 @@ function fetchOneCallWeather(lat, lon) {
         }
     });
 }
-fetchOneCallWeather();
+fetchGeolocation();
 
 // function getforecast(cityName) {
 //     var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c`;
