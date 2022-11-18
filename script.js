@@ -66,15 +66,19 @@ function fetchGeolocation(cityName) {
         currentTempEl.innerHTML= "Temperature: " + data.main.temp + "°F";
         currentWindEl.innerHTML= "Wind: " + data.wind.speed + "mph";
         currentHumidityEl.innerHTML= "Humidity: " + data.main.humidity + "%";
+        console.log(data);
         
     })
+
+    
+
+
 
 }
 
 findEl.addEventListener("click",function(){
     var cityName = cityfindEl.value;
-    getApi(cityName);
-    getforecast(cityName);
+    fetchGeolocation(cityName);
     var cityInfo = [];
     cityInfo = cityName.split(" ");
 
@@ -150,7 +154,7 @@ function fetchOneCallWeather(lat, lon) {
         }
     });
 }
-fetchGeolocation();
+// fetchGeolocation();
 
 // function getforecast(cityName) {
 //     var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c`;
