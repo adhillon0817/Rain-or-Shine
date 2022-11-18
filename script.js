@@ -92,88 +92,92 @@ function showCityList(cityName){
 }
 
 
-function getforecast(cityName) {
-    var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c`;
+// function getforecast(cityName) {
+//     var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c`;
     
      
-    fetch(request)
-    .then(function(response) {
-        return response.json();
-    })
-
-    .then(function(data){
-
-        var dayOne = moment().add(1, "days").format("MM/DD/YYYY");
-        dayOneDateEl.innerHTML = dayOne;
-        dayOneTempEl.innerHTML = "Temperature: " + data.list[1].main.temp + "°F";
-        dayOneWindEl.innerHTML = "Wind: " + data.list[1].main.wind.speed + "mph";
-        dayOneHumidityEl.innerHTML = "Humidity: " + data.list[1].main.humidity + "%";
-        
-    
-    })
-
-    .then(function(data){
-
-        var dayTwo = moment().add(2, "days").format("MM/DD/YYYY");
-        dayTwoDateEl.innerHTML = dayTwo;
-        dayTwoTempEl.innerHTML = "Temperature: " + data.list[8].main.temp + "°F";
-        dayTwoWindEl.innerHTML = "Wind: " + data.list[8].main.wind.speed + "mph";
-        dayTwoHumidityEl.innerHTML = "Humidity: " + data.list[8].main.humidity + "%";
-        
-    
-    })
-
-    .then(function(data){
-
-        var dayThree = moment().add(3, "days").format("MM/DD/YYYY");
-        dayThreeDateEl.innerHTML = dayThree;
-        dayThreeTempEl.innerHTML = "Temperature: " + data.list[16].main.temp + "°F";
-        dayThreeWindEl.innerHTML = "Wind: " + data.list[16].main.wind.speed + "mph";
-        dayThreeHumidityEl.innerHTML = "Humidity: " + data.list[16].main.humidity + "%";
-        
-    
-    })
-
-    .then(function(data){
-
-        var dayFour = moment().add(4, "days").format("MM/DD/YYYY");
-        dayFourDateEl.innerHTML = dayFour;
-        dayFourTempEl.innerHTML = "Temperature: " + data.list[24].main.temp + "°F";
-        dayFourWindEl.innerHTML = "Wind: " + data.list[24].main.wind.speed + "mph";
-        dayFourHumidityEl.innerHTML = "Humidity: " + data.list[24].main.humidity + "%";
-        
-    
-    })
-
-    .then(function(data){
-
-        var dayFive = moment().add(5, "days").format("MM/DD/YYYY");
-        dayFiveDateEl.innerHTML = dayFive;
-        dayFiveTempEl.innerHTML = "Temperature: " + data.list[32].main.temp + "°F";
-        dayFiveWindEl.innerHTML = "Wind: " + data.list[32].main.wind.speed + "mph";
-        dayFiveHumidityEl.innerHTML = "Humidity: " + data.list[32].main.humidity + "%";
-        
-    
-    })
-    
-}
-
-
-// function fetchOneCallWeather(lat, lon) {
-    
-    
-//     var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
-
-
-//     fetch(longLat)
+//     fetch(request)
 //     .then(function(response) {
 //         return response.json();
 //     })
-//     .then(function(data) {
-//         console.log(data);
+
+//     .then(function(data){
+
+//         var dayOne = moment().add(1, "days").format("MM/DD/YYYY");
+//         dayOneDateEl.innerHTML = dayOne;
+//         dayOneTempEl.innerHTML = "Temperature: " + data.main.temp + "°F";
+//         dayOneWindEl.innerHTML = "Wind: " + data.wind.speed + "mph";
+//         dayOneHumidityEl.innerHTML = "Humidity: " + data.main.humidity + "%";
+        
+    
 //     })
 
+//     .then(function(data){
+
+//         var dayTwo = moment().add(2, "days").format("MM/DD/YYYY");
+//         dayTwoDateEl.innerHTML = dayTwo;
+//         dayTwoTempEl.innerHTML = "Temperature: " + data.list[8].main.temp + "°F";
+//         dayTwoWindEl.innerHTML = "Wind: " + data.list[8].main.wind.speed + "mph";
+//         dayTwoHumidityEl.innerHTML = "Humidity: " + data.list[8].main.humidity + "%";
+        
+    
+//     })
+
+//     .then(function(data){
+
+//         var dayThree = moment().add(3, "days").format("MM/DD/YYYY");
+//         dayThreeDateEl.innerHTML = dayThree;
+//         dayThreeTempEl.innerHTML = "Temperature: " + data.list[16].main.temp + "°F";
+//         dayThreeWindEl.innerHTML = "Wind: " + data.list[16].main.wind.speed + "mph";
+//         dayThreeHumidityEl.innerHTML = "Humidity: " + data.list[16].main.humidity + "%";
+        
+    
+//     })
+
+//     .then(function(data){
+
+//         var dayFour = moment().add(4, "days").format("MM/DD/YYYY");
+//         dayFourDateEl.innerHTML = dayFour;
+//         dayFourTempEl.innerHTML = "Temperature: " + data.list[24].main.temp + "°F";
+//         dayFourWindEl.innerHTML = "Wind: " + data.list[24].main.wind.speed + "mph";
+//         dayFourHumidityEl.innerHTML = "Humidity: " + data.list[24].main.humidity + "%";
+        
+    
+//     })
+
+//     .then(function(data){
+
+//         var dayFive = moment().add(5, "days").format("MM/DD/YYYY");
+//         dayFiveDateEl.innerHTML = dayFive;
+//         dayFiveTempEl.innerHTML = "Temperature: " + data.list[32].main.temp + "°F";
+//         dayFiveWindEl.innerHTML = "Wind: " + data.list[32].main.wind.speed + "mph";
+//         dayFiveHumidityEl.innerHTML = "Humidity: " + data.list[32].main.humidity + "%";
+        
+    
+//     })
     
 // }
 
-// fetchGeolocation();
+
+function fetchOneCallWeather(lat, lon) {
+    
+    
+    var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
+
+
+    fetch(longLat)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        if (!data[0]){
+            alert('Location not found');
+        } else{
+            appendToHistory(search);
+            fetchOneCallWeather(data[0]);
+        }
+    })
+
+}
+
+fetchGeolocation();
