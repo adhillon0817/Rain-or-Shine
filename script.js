@@ -12,7 +12,7 @@ var today = moment().format("MM/DD/YYYY");
 
 var cityListEl = document.getElementById("search-list")
 
-var apiKey = "0f003ceaa60fba131d9eb1c9a697784c";
+var apiKey = "1a190c9a0e4a3732473d9dce4591368f";
 
 var dayOneDateEl = document.getElementById("dateone");
 var dayOneTempEl = document.getElementById("tempone");
@@ -52,7 +52,7 @@ var dayFiveHumidityEl = document.getElementById("humidityfive");
 
 
 function fetchGeolocation(cityName) {
-    var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=0f003ceaa60fba131d9eb1c9a697784c`;
+    var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=1a190c9a0e4a3732473d9dce4591368f`;
   
      
     fetch(request)
@@ -108,7 +108,7 @@ function showCityList(cityName){
 function fetchOneCallWeather(lat, lon) {
     
     
-    var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=0f003ceaa60fba131d9eb1c9a697784c`
+    var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=1a190c9a0e4a3732473d9dce4591368f`
 
     fetch(longLat)
     .then(function(response) {
