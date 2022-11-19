@@ -132,7 +132,8 @@ function fetchOneCallWeather(lat, lon) {
 
             var singleWind = $("<div>")
             .addClass("wind")
-            .text(`Wind: ` + data.daily[i].wind.max `mps` );
+            .text(`Wind: ` + data.daily[i].wind + `mps` );
+            // console.log(singleWind)
 
             var singleHumid = $("<div>")
             .addClass("humid")
@@ -141,22 +142,15 @@ function fetchOneCallWeather(lat, lon) {
             var singleCard = $("<div>")
             .addClass("singlecard")
             .append(singleDate, singleTemp, singleWind, singleHumid, singleCard);
-            
-
-
-    //         dayOneDateEl.innerHTML = dayOne;
-    //         dayOneTempEl.innerHTML = "Temperature: " + data.main.temp + "°F";
-    //         dayOneWindEl.innerHTML = "Wind: " + data.wind.speed + "mph";
-    //         dayOneHumidityEl.innerHTML = "Humidity: " + data.main.humidity + "%";
-    //     };
-
-    //     var 
-    //    .appendChild()
-
-
+           
+            var wholeCard = $("#whole-card");
+            $(wholeCard).append(singleCard)
         }
+        
     });
 }
+
+
 // fetchGeolocation();
 
 // function getforecast(cityName) {
