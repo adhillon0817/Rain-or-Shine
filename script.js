@@ -104,12 +104,16 @@ findEl.addEventListener("click",function(){
 })
 
 function showCityList(cityName){
-    var displayName = JSON.parse(localStorage.getItem(cityName))
+    var displayName = JSON.parse(localStorage.getItem('key'))
     console.log(displayName);
+
+    var li = document.createElement("li");
+    li.textContent = displayName;
+    cityListEl.appendChild(li);
 }
 
 
-
+showCityList();
 
 
 
