@@ -92,11 +92,16 @@ function fetchGeolocation(cityName) {
 findEl.addEventListener("click",function(){
     var cityName = cityfindEl.value;
     fetchGeolocation(cityName);
-    var cityInfo = [];
-    cityInfo = cityName.split(" ");
+    cityName.split(" ");
 
-    localStorage.setItem("key",JSON.stringify(cityInfo));
+    var cityData = JSON.parse(localStorage.getItem('key'));
+    console.log(cityData)
+    cityData.push(cityName);
+
+
+    localStorage.setItem("key",JSON.stringify(cityData));
     var displayName = JSON.parse(localStorage.getItem('key'));
+
 
     var li = document.createElement("li");
     li.textContent = displayName;
