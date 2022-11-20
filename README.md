@@ -14,8 +14,9 @@ SO THAT I can plan a trip accordingly
 ```
 
 ## Mock:
-[See the mock version of the dashboard! The link to the deployed site is down below!](WeatherDashboard.png)
+[See the mock version of the dashboard by clicking here!](WeatherDashboard.png)
 
+[DEPLOYED LINK IS ALSO ATTACHED ON THE BOTTOM]( https://adhillon0817.github.io/Rain-or-Shine/)
 
 ## Technologies:
 
