@@ -140,7 +140,8 @@ function fetchOneCallWeather(lat, lon) {
 
             var singleWind = $("<div>")
             .addClass("wind")
-            .text(`Wind: ` + data.daily[i].wind + `mps` );
+            .text(`Wind: ` + data.daily[i].wind_speed + `mph` );
+
 
             var singleHumid = $("<div>")
             .addClass("humid")
@@ -153,7 +154,6 @@ function fetchOneCallWeather(lat, lon) {
             var wholeCard = $("#whole-card");
             $(wholeCard).append(singleCard)
 
-            // console.log(date.daily[i])
 
         }
         
