@@ -1,6 +1,7 @@
 var cityfindEl = document.getElementById("searchBox");
 var findEl = document.getElementById("find"); 
 
+//declaring variables for each element needed to appear for forecast
 var cityNameEl = document.getElementById("cityName");
 var currentDateEl = document.getElementById("date");
 var currentTempEl = document.getElementById("temperature");
@@ -8,11 +9,11 @@ var currentWindEl = document.getElementById("wind");
 var currentHumidityEl = document.getElementById("humidity");
 
 
-var today = moment().format("MM/DD/YYYY");
+var today = moment().format("MM/DD/YYYY");   //using moment to set a format for date
 
-var cityListEl = document.getElementById("search-list")
+var cityListEl = document.getElementById("search-list")  //variable set to see list of cities
 
-var apiKey = "1a190c9a0e4a3732473d9dce4591368f";
+var apiKey = "1a190c9a0e4a3732473d9dce4591368f";  //the api key is set with a variable
 
 var dayOneDateEl = document.getElementById("dateone");
 var dayOneTempEl = document.getElementById("tempone");
@@ -50,7 +51,7 @@ var dayFiveHumidityEl = document.getElementById("humidityfive");
 // function renderLastRegistered();
 
 
-
+//setting the link with the api key
 function fetchGeolocation(cityName) {
     var request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=1a190c9a0e4a3732473d9dce4591368f`;
   
@@ -59,7 +60,7 @@ function fetchGeolocation(cityName) {
     .then(function(response) {
         return response.json();
     })  
-
+//getting each componenet for the current day temp, wind, and humidity
     .then(function(data) {
         console.log(data)
         cityNameEl.innerHTML=data.name;
@@ -89,11 +90,13 @@ function fetchGeolocation(cityName) {
 
 }
 
+// adding event listener for when clicking to search the city
 findEl.addEventListener("click",function(){
     var cityName = cityfindEl.value;
     fetchGeolocation(cityName);
     cityName.split(" ");
 
+//grabbing from the local storage and adding the next searched city to the array so that the cities can continue to appear after refreshing of page and stil see the next data searched
     var cityData = JSON.parse(localStorage.getItem('key'));
     console.log(cityData)
     cityData.push(cityName);
@@ -121,10 +124,10 @@ function showCityList(cityName){
 showCityList();
 
 
-
+// get the cards for the week
 function fetchOneCallWeather(lat, lon) {
     
-    
+   //grabbing lon and lat with api key 
     var longLat = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,minutely&appid=1a190c9a0e4a3732473d9dce4591368f`
 
     fetch(longLat)
@@ -136,7 +139,7 @@ function fetchOneCallWeather(lat, lon) {
         // if (!data[0]){
         //     alert('Location not found');
         // }
-
+//grabbing each single aspect such as the date, temperature, wind, and humidity and posting with correct variable
         for (var i = 1; i <6; i++){
             var singleDate =$("<h4>")
             .addClass("singleDate")
