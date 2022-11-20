@@ -61,10 +61,18 @@ function fetchGeolocation(cityName) {
     })  
 
     .then(function(data) {
+        console.log(data)
+        cityNameEl.innerHTML=data.name;
+        currentDateEl.innerHTML=today;
+        currentTempEl.innerHTML= "Temperature: " + data.main.temp + "°F";
+        image.pngcurrentWindEl.innerHTML= "Wind: " + data.wind.speed + "mph";
+        currentHumidityEl.innerHTML= "Humidity: " + data.main.humidity + "%";
         var lat = data.coord.lat;
         var lon = data.coord.lon;
-         
-         fetchOneCallWeather(lat, lon);
+        
+        
+
+        fetchOneCallWeather(lat, lon);
           
       })
 
@@ -116,9 +124,9 @@ function fetchOneCallWeather(lat, lon) {
     })
     .then(function(data) {
         
-        if (!data[0]){
-            alert('Location not found');
-        }
+        // if (!data[0]){
+        //     alert('Location not found');
+        // }
 
         for (var i = 1; i <6; i++){
             var singleDate =$("<h4>")
