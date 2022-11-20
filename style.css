@@ -18,6 +18,13 @@ header{
 
 .container-fluid{
   display: flex;
-  align-items: center;
+  flex-flow: row wrap;
   justify-content: center;
+  width: 100%;
+}
+
+.whole-card{
+  display: flex;
+  align-items: center;
+
 }
