@@ -11,9 +11,11 @@ header{
   font-size: larger;
 }
 
+/* text */
 .container{
   font-size: medium;
-  color:black;
+  color: black;
+  align-items: left;
 }
 
 .container-fluid{
@@ -26,6 +28,7 @@ header{
 
 .whole-card{
   display: flex;
-  align-items: center;
+  align-items: right;
+
 
 }
