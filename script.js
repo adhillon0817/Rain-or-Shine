@@ -65,7 +65,7 @@ function fetchGeolocation(cityName) {
         cityNameEl.innerHTML=data.name;
         currentDateEl.innerHTML=today;
         currentTempEl.innerHTML= "Temperature: " + data.main.temp + "°F";
-        image.pngcurrentWindEl.innerHTML= "Wind: " + data.wind.speed + "mph";
+        currentWindEl.innerHTML= "Wind: " + data.wind.speed + "mph";
         currentHumidityEl.innerHTML= "Humidity: " + data.main.humidity + "%";
         var lat = data.coord.lat;
         var lon = data.coord.lon;
