@@ -161,7 +161,7 @@ function fetchOneCallWeather(lat, lon) {
 
             var singleCard = $("<div>")
             .addClass("singlecard")
-            .append(singleDate, singleTemp, singleWind, singleHumid, singleCard);
+            .append(singleDate, singleTemp, singleWind, singleHumid);
            
             var wholeCard = $("#whole-card");
             $(wholeCard).append(singleCard)

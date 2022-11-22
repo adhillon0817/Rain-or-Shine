@@ -32,3 +32,15 @@ header{
 
 
 }
+
+.singlecard{
+  /* column-width: flex; */
+  /* display: flex; */
+  flex-flow: column;
+  padding: inherit;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+
+
+
+}
